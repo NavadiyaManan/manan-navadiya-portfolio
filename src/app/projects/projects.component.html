@@ -1,0 +1,52 @@
+<section id="projects">
+  <div class="container">
+    <h2 class="section-title">My <span>Projects</span></h2>
+    
+    <!-- Filter Tabs -->
+    <div class="project-filters">
+      <button class="filter-btn" [class.active]="activeFilter === 'all'" (click)="setFilter('all')">
+        <i class="fas fa-list"></i> All Work
+      </button>
+      <button class="filter-btn" [class.active]="activeFilter === 'professional'" (click)="setFilter('professional')">
+        <i class="fas fa-briefcase"></i> Professional
+      </button>
+      <button class="filter-btn" [class.active]="activeFilter === 'academic'" (click)="setFilter('academic')">
+        <i class="fas fa-graduation-cap"></i> Academic
+      </button>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="project-grid">
+      @for (project of filteredProjects; track project.title) {
+        <div class="project-item glass-card">
+          <div class="project-card-header">
+            <span class="project-badge" [class.pro-badge]="project.category === 'professional'">
+              {{ project.badge }}
+            </span>
+            <h3>{{ project.title }}</h3>
+          </div>
+          
+          <div class="project-card-content">
+            <p class="project-summary">{{ project.summary }}</p>
+            
+            <div class="tech-stack">
+              @for (techItem of project.tech; track techItem) {
+                <span class="tech-pill">{{ techItem }}</span>
+              }
+            </div>
+            
+            <ul class="project-details">
+              @for (detail of project.details; track detail) {
+                <li>
+                  <i class="fas fa-caret-right"></i>
+                  <span>{{ detail }}</span>
+                </li>
+              }
+            </ul>
+          </div>
+        </div>
+      }
+    </div>
+
+  </div>
+</section>

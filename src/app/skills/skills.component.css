@@ -1,0 +1,169 @@
+/* Skills Section Styles */
+.skills-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.skills-category {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.skills-category h3 {
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.skills-category h3 i {
+  color: var(--secondary-color);
+}
+
+.category-skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 15px;
+  flex-grow: 1;
+}
+
+.skill-item {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 20px 10px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  transition: var(--transition-smooth);
+  cursor: default;
+}
+
+.skill-item i {
+  font-size: 2.2rem;
+  color: var(--text-muted);
+  transition: var(--transition-smooth);
+}
+
+.skill-item span {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: var(--transition-smooth);
+}
+
+/* Hover State - Glow and Brand Colors */
+.skill-item:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.skill-item:hover span {
+  color: var(--text-primary);
+}
+
+/* 1. Angular */
+.angular-skill:hover {
+  border-color: rgba(221, 0, 49, 0.4);
+  box-shadow: 0 0 15px rgba(221, 0, 49, 0.25);
+}
+.angular-skill:hover i {
+  color: #dd0031;
+}
+
+/* 2. JS/TS */
+.js-skill:hover {
+  border-color: rgba(247, 223, 30, 0.4);
+  box-shadow: 0 0 15px rgba(247, 223, 30, 0.25);
+}
+.js-skill:hover i {
+  color: #f7df1e;
+}
+
+/* 3. HTML/CSS */
+.html-skill:hover {
+  border-color: rgba(227, 79, 38, 0.4);
+  box-shadow: 0 0 15px rgba(227, 79, 38, 0.25);
+}
+.html-skill:hover i {
+  color: #e34f26;
+}
+
+/* 4. .NET */
+.dotnet-skill:hover {
+  border-color: rgba(81, 43, 212, 0.4);
+  box-shadow: 0 0 15px rgba(81, 43, 212, 0.25);
+}
+.dotnet-skill:hover i {
+  color: #512bd4;
+}
+
+/* 5. Android */
+.android-skill:hover {
+  border-color: rgba(61, 220, 132, 0.4);
+  box-shadow: 0 0 15px rgba(61, 220, 132, 0.25);
+}
+.android-skill:hover i {
+  color: #3ddc84;
+}
+
+/* 6. Python */
+.python-skill:hover {
+  border-color: rgba(55, 118, 171, 0.4);
+  box-shadow: 0 0 15px rgba(55, 118, 171, 0.25);
+}
+.python-skill:hover i {
+  color: #3776ab;
+}
+
+/* 7. R Programming */
+.r-skill:hover {
+  border-color: rgba(39, 108, 190, 0.4);
+  box-shadow: 0 0 15px rgba(39, 108, 190, 0.25);
+}
+.r-skill:hover i {
+  color: #276cbe;
+}
+
+/* 8. SQL / MySQL */
+.sql-skill:hover {
+  border-color: rgba(6, 182, 212, 0.4);
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.25);
+}
+.sql-skill:hover i {
+  color: #06b6d4;
+}
+
+/* 9. SQLite */
+.sqlite-skill:hover {
+  border-color: rgba(0, 59, 87, 0.4);
+  box-shadow: 0 0 15px rgba(0, 59, 87, 0.25);
+}
+.sqlite-skill:hover i {
+  color: #3776ab;
+}
+
+/* 10. Git/GitHub */
+.git-skill:hover {
+  border-color: rgba(240, 80, 50, 0.4);
+  box-shadow: 0 0 15px rgba(240, 80, 50, 0.25);
+}
+.git-skill:hover i {
+  color: #f05032;
+}
+
+/* Responsive adjust */
+@media (max-width: 480px) {
+  .skills-categories {
+    grid-template-columns: 1fr;
+  }
+}
