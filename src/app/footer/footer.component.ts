@@ -1,12 +1,39 @@
-import { Component } from '@angular/core';
+import { Component, Inject, PLATFORM_ID, HostListener } from '@angular/core';
+import { isPlatformBrowser, CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './footer.component.html',
-  styleUrl: './footer.component.css'
+  styleUrl: './footer.component.scss'
 })
 export class FooterComponent {
-  phone: string = '+91 96247 00430';
-  email: string = 'man.navadiya110@gmail.com';
+  showScrollTop = false;
+
+  constructor(
+    private router: Router,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {}
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    if (!isPlatformBrowser(this.platformId)) return;
+    this.showScrollTop = window.scrollY > 500;
+  }
+
+  scrollToTop(): void {
+    if (!isPlatformBrowser(this.platformId)) return;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  smoothScroll(fragment: string): void {
+    const cleanFragment = fragment.replace('#', '');
+    this.router.navigate([], { fragment: cleanFragment }).then(() => {
+      const element = document.querySelector('#' + cleanFragment);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  }
 }

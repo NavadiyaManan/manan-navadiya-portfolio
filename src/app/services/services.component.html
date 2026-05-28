@@ -1,0 +1,28 @@
+<section id="services">
+  <div class="container">
+    <h2 class="section-title">My <span>Services</span></h2>
+    <p class="section-subtitle text-center text-brand-slate-400 max-w-2xl mx-auto -mt-8 mb-16 text-lg">
+      I engineer scalable backend platforms, high-performance user interfaces, and automated workflow integrations that drive tangible business impact.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      @for (service of services; track service.title) {
+        <div class="service-card glass-card relative overflow-hidden group flex flex-col p-8">
+          <div class="service-icon-wrapper mb-6 relative self-start">
+            <div class="service-icon-bg absolute inset-0 bg-brand-indigo/10 blur-md rounded-full transition-all group-hover:scale-125 duration-300"></div>
+            <div class="service-icon relative z-10 flex items-center justify-center w-14 h-14 rounded-full border border-brand-indigo/20 bg-brand-slate-800 text-brand-cyan group-hover:text-white group-hover:border-brand-cyan/40 transition-all duration-300">
+              <i [class]="service.icon + ' text-2xl'"></i>
+            </div>
+          </div>
+          <h3 class="text-xl font-bold mb-3 text-brand-slate-50 group-hover:text-brand-cyan transition-colors duration-300">
+            {{ service.title }}
+          </h3>
+          <p class="text-brand-slate-400 text-sm leading-relaxed flex-grow">
+            {{ service.description }}
+          </p>
+          <div class="glow-effect absolute -bottom-10 -right-10 w-24 h-24 rounded-full bg-gradient-to-br from-brand-indigo to-brand-cyan opacity-0 group-hover:opacity-10 blur-xl transition-opacity duration-300 pointer-events-none"></div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

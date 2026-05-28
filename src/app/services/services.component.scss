@@ -1,0 +1,18 @@
+.service-card {
+  transition: var(--transition-smooth);
+  
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(99, 102, 241, 0.15);
+    border-color: rgba(6, 182, 212, 0.25);
+  }
+}
+
+.service-icon-bg {
+  transform-origin: center;
+}
+
+.service-card:hover .service-icon {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.4);
+}

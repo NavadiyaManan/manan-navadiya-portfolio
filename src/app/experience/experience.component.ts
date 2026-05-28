@@ -5,7 +5,7 @@ import { ExperienceService } from '../experience.service';
   selector: 'app-experience',
   imports: [],
   templateUrl: './experience.component.html',
-  styleUrl: './experience.component.css'
+  styleUrl: './experience.component.scss'
 })
 export class ExperienceComponent {
 experience: any; 

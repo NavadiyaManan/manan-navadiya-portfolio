@@ -1,76 +1,96 @@
-<section id="education" class="education-section">
+<section id="education" class="relative">
   <div class="container">
     <h2 class="section-title">My <span>Education</span></h2>
+    <p class="section-subtitle text-center text-brand-slate-400 max-w-2xl mx-auto -mt-8 mb-16 text-lg">
+      My academic foundation in computer science and enterprise engineering.
+    </p>
     
-    <div class="education-timeline">
+    <div class="education-timeline relative pl-8 md:pl-0 md:flex md:flex-col md:items-center">
+      <!-- Central vertical timeline line -->
+      <div class="timeline-line absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-brand-indigo via-brand-cyan to-brand-slate-800 -translate-x-1/2"></div>
       
       <!-- MCA Card -->
-      <div class="education-card glass-card">
-        <div class="education-marker">
-          <i class="fas fa-graduation-cap"></i>
-        </div>
-        <div class="education-details">
-          <div class="edu-header">
-            <h3>Master of Computer Applications (MCA)</h3>
-            <span class="edu-year">2021 - 2023</span>
+      <div class="timeline-item relative mb-12 w-full md:w-1/2 md:pr-12 md:self-start md:text-right">
+        <!-- Node Marker -->
+        <div class="node-marker absolute left-[-24px] md:left-auto md:right-[-9px] top-8 w-4 h-4 rounded-full bg-brand-cyan border-2 border-brand-slate-950 shadow-[0_0_12px_rgba(6,182,212,0.8)] z-10"></div>
+        
+        <div class="education-card glass-card p-8 inline-block text-left w-full hover:scale-[1.01] transition-transform duration-300">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-4">
+            <div>
+              <span class="text-xs font-bold text-brand-cyan uppercase tracking-widest">Master's Degree</span>
+              <h3 class="text-2xl font-bold text-brand-slate-50 mt-1">Master of Computer Applications</h3>
+            </div>
+            <span class="duration-badge bg-brand-cyan/10 border border-brand-cyan/30 text-brand-cyan text-xs font-semibold px-3 py-1 rounded-full self-start md:self-center">
+              2021 - 2023
+            </span>
           </div>
-          <h4 class="edu-institution"><i class="fas fa-university"></i> GLS University, Ahmedabad</h4>
-          <p class="edu-description">
-            Specialized in advanced computing concepts, enterprise web application design, and modern framework patterns. Designed and developed multiple desktop and web-based projects.
+          
+          <h4 class="text-brand-slate-300 font-bold mb-3 flex items-center gap-2 text-sm uppercase tracking-wider">
+            <i class="fas fa-university text-brand-indigo"></i> GLS University, Ahmedabad
+          </h4>
+          
+          <p class="edu-desc text-brand-slate-400 text-sm leading-relaxed">
+            Focused on advanced enterprise systems, software engineering methodologies, web development patterns, database scaling, and distributed architecture.
           </p>
         </div>
       </div>
       
       <!-- BCA Card -->
-      <div class="education-card glass-card">
-        <div class="education-marker">
-          <i class="fas fa-graduation-cap"></i>
-        </div>
-        <div class="education-details">
-          <div class="edu-header">
-            <h3>Bachelor of Computer Applications (BCA)</h3>
-            <span class="edu-year">2018 - 2021</span>
+      <div class="timeline-item relative mb-12 w-full md:w-1/2 md:pl-12 md:self-end">
+        <!-- Node Marker -->
+        <div class="node-marker absolute left-[-24px] md:left-[-9px] top-8 w-4 h-4 rounded-full bg-brand-indigo border-2 border-brand-slate-950 shadow-[0_0_12px_rgba(99,102,241,0.8)] z-10"></div>
+        
+        <div class="education-card glass-card p-8 inline-block text-left w-full hover:scale-[1.01] transition-transform duration-300">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-4">
+            <div>
+              <span class="text-xs font-bold text-brand-indigo uppercase tracking-widest">Bachelor's Degree</span>
+              <h3 class="text-2xl font-bold text-brand-slate-50 mt-1">Bachelor of Computer Applications</h3>
+            </div>
+            <span class="duration-badge bg-brand-indigo/10 border border-brand-indigo/30 text-brand-indigo text-xs font-semibold px-3 py-1 rounded-full self-start md:self-center">
+              2018 - 2021
+            </span>
           </div>
-          <h4 class="edu-institution"><i class="fas fa-university"></i> MKBU, Bhavnagar</h4>
-          <span class="edu-grade"><i class="fas fa-award"></i> Grade: 64%</span>
-          <p class="edu-description">
-            Built strong foundations in core computer science subjects, object-oriented design, databases, and structured programming paradigms.
+          
+          <h4 class="text-brand-slate-300 font-bold mb-3 flex items-center gap-2 text-sm uppercase tracking-wider">
+            <i class="fas fa-university text-brand-indigo"></i> MKBU, Bhavnagar
+          </h4>
+          
+          <div class="flex items-center gap-2 text-xs font-semibold text-brand-emerald bg-brand-emerald/10 border border-brand-emerald/20 px-2.5 py-1 rounded-md self-start mb-3 max-w-fit">
+            <i class="fas fa-award"></i> Grade: 64%
+          </div>
+          
+          <p class="edu-desc text-brand-slate-400 text-sm leading-relaxed">
+            Acquired solid core fundamentals in object-oriented programming, databases (SQL), data structures, and computer networking.
           </p>
         </div>
       </div>
       
       <!-- HSC Card -->
-      <div class="education-card glass-card">
-        <div class="education-marker">
-          <i class="fas fa-school"></i>
-        </div>
-        <div class="education-details">
-          <div class="edu-header">
-            <h3>Higher Secondary (HSC)</h3>
-            <span class="edu-year">Graduated: Mar 2018</span>
+      <div class="timeline-item relative mb-12 w-full md:w-1/2 md:pr-12 md:self-start md:text-right">
+        <!-- Node Marker -->
+        <div class="node-marker absolute left-[-24px] md:left-auto md:right-[-9px] top-8 w-4 h-4 rounded-full bg-brand-cyan border-2 border-brand-slate-950 shadow-[0_0_12px_rgba(6,182,212,0.8)] z-10"></div>
+        
+        <div class="education-card glass-card p-8 inline-block text-left w-full hover:scale-[1.01] transition-transform duration-300">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-4">
+            <div>
+              <span class="text-xs font-bold text-brand-cyan uppercase tracking-widest">Higher Secondary School</span>
+              <h3 class="text-2xl font-bold text-brand-slate-50 mt-1">HSC (Science Stream)</h3>
+            </div>
+            <span class="duration-badge bg-brand-cyan/10 border border-brand-cyan/30 text-brand-cyan text-xs font-semibold px-3 py-1 rounded-full self-start md:self-center">
+              Graduated: 2018
+            </span>
           </div>
-          <h4 class="edu-institution"><i class="fas fa-university"></i> Shree Swaminarayan High School, Sardarnagar, Bhavnagar</h4>
-          <span class="edu-grade"><i class="fas fa-award"></i> Grade: 69%</span>
-          <p class="edu-description">
-            Completed higher secondary education with a major focus on scientific research methodologies, mathematics, and science.
-          </p>
-        </div>
-      </div>
-      
-      <!-- SSC Card -->
-      <div class="education-card glass-card">
-        <div class="education-marker">
-          <i class="fas fa-school"></i>
-        </div>
-        <div class="education-details">
-          <div class="edu-header">
-            <h3>Secondary School (SSC)</h3>
-            <span class="edu-year">Graduated: Mar 2016</span>
+          
+          <h4 class="text-brand-slate-300 font-bold mb-3 flex items-center gap-2 text-sm uppercase tracking-wider">
+            <i class="fas fa-school text-brand-indigo"></i> Shree Swaminarayan High School, Bhavnagar
+          </h4>
+          
+          <div class="flex items-center gap-2 text-xs font-semibold text-brand-emerald bg-brand-emerald/10 border border-brand-emerald/20 px-2.5 py-1 rounded-md self-start mb-3 max-w-fit">
+            <i class="fas fa-award"></i> Grade: 69%
           </div>
-          <h4 class="edu-institution"><i class="fas fa-university"></i> Shree Daxina Murti Vinay Mandir, Bhavnagar</h4>
-          <span class="edu-grade"><i class="fas fa-award"></i> Grade: 60%</span>
-          <p class="edu-description">
-            Acquired primary analytical, linguistic, and scientific foundations in basic secondary education.
+          
+          <p class="edu-desc text-brand-slate-400 text-sm leading-relaxed">
+            Completed scientific curriculum with focus on mathematics, physics, and core science courses.
           </p>
         </div>
       </div>

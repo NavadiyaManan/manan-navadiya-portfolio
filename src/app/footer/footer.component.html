@@ -1,48 +1,50 @@
-<footer id="contact">
-  <div class="container">
-    <h2 class="section-title">Get In <span>Touch</span></h2>
-    <p class="contact-subtitle">Have a project in mind, want to collaborate, or just say hello? Feel free to reach out!</p>
+<footer class="bg-brand-slate-950 border-t border-brand-slate-900 py-12 relative">
+  <div class="container flex flex-col items-center gap-8 text-center">
     
-    <div class="contact-grid">
-      <!-- Email Card -->
-      <a href="mailto:man.navadiya110@gmail.com" class="contact-card glass-card">
-        <div class="contact-icon email-icon">
-          <i class="fas fa-envelope"></i>
-        </div>
-        <h4>Email Me</h4>
-        <p>{{ email }}</p>
-      </a>
-      
-      <!-- Phone Card -->
-      <a href="tel:+919624700430" class="contact-card glass-card">
-        <div class="contact-icon phone-icon">
-          <i class="fas fa-phone"></i>
-        </div>
-        <h4>Call Me</h4>
-        <p>{{ phone }}</p>
-      </a>
-      
-      <!-- LinkedIn Card -->
-      <a href="https://www.linkedin.com/in/manan-navadiya-3223401bb/" target="_blank" rel="noopener noreferrer" class="contact-card glass-card">
-        <div class="contact-icon linkedin-icon">
-          <i class="fab fa-linkedin-in"></i>
-        </div>
-        <h4>LinkedIn</h4>
-        <p>manan-navadiya</p>
-      </a>
+    <!-- Logo -->
+    <div class="logo-footer text-2xl font-black text-brand-slate-50 tracking-wider cursor-pointer" (click)="scrollToTop()">
+      MN<span class="text-brand-cyan">.</span>
+    </div>
 
-      <!-- GitHub Card -->
-      <a href="https://github.com/NavadiyaManan" target="_blank" rel="noopener noreferrer" class="contact-card glass-card">
-        <div class="contact-icon github-icon">
-          <i class="fab fa-github"></i>
-        </div>
-        <h4>GitHub</h4>
-        <p>NavadiyaManan</p>
+    <!-- Quick Navigation Links -->
+    <div class="footer-links flex flex-wrap justify-center gap-6 md:gap-8 text-sm">
+      <a (click)="smoothScroll('#about')" class="text-brand-slate-400 hover:text-white cursor-pointer transition-colors duration-300">About</a>
+      <a (click)="smoothScroll('#services')" class="text-brand-slate-400 hover:text-white cursor-pointer transition-colors duration-300">Services</a>
+      <a (click)="smoothScroll('#experience')" class="text-brand-slate-400 hover:text-white cursor-pointer transition-colors duration-300">Experience</a>
+      <a (click)="smoothScroll('#education')" class="text-brand-slate-400 hover:text-white cursor-pointer transition-colors duration-300">Education</a>
+      <a (click)="smoothScroll('#skills')" class="text-brand-slate-400 hover:text-white cursor-pointer transition-colors duration-300">Skills</a>
+      <a (click)="smoothScroll('#projects')" class="text-brand-slate-400 hover:text-white cursor-pointer transition-colors duration-300">Projects</a>
+      <a (click)="smoothScroll('#contact')" class="text-brand-slate-400 hover:text-white cursor-pointer transition-colors duration-300">Connect</a>
+    </div>
+
+    <!-- Social Media Directives -->
+    <div class="footer-socials flex gap-4">
+      <a href="https://github.com/NavadiyaManan" target="_blank" rel="noopener noreferrer" class="social-circle text-brand-slate-400 hover:text-white flex items-center justify-center w-10 h-10 rounded-full border border-brand-slate-800 bg-brand-slate-900/50 transition-all duration-300 hover:bg-brand-indigo hover:border-transparent hover:scale-105" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/manan-navadiya-3223401bb/" target="_blank" rel="noopener noreferrer" class="social-circle text-brand-slate-400 hover:text-white flex items-center justify-center w-10 h-10 rounded-full border border-brand-slate-800 bg-brand-slate-900/50 transition-all duration-300 hover:bg-brand-indigo hover:border-transparent hover:scale-105" aria-label="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="mailto:man.navadiya110@gmail.com" class="social-circle text-brand-slate-400 hover:text-white flex items-center justify-center w-10 h-10 rounded-full border border-brand-slate-800 bg-brand-slate-900/50 transition-all duration-300 hover:bg-brand-indigo hover:border-transparent hover:scale-105" aria-label="Email">
+        <i class="fas fa-envelope"></i>
       </a>
     </div>
 
-    <div class="footer-divider"></div>
+    <div class="w-full max-w-4xl border-t border-brand-slate-900/60 my-2"></div>
 
-    <p class="copyright">&copy; 2026 Manan Navadiya. All rights reserved. Designed with passion.</p>
+    <!-- Copyright -->
+    <p class="copyright text-brand-slate-400 text-xs">
+      &copy; 2026 Manan Navadiya. All rights reserved. Designed for professional client conversion.
+    </p>
   </div>
+
+  <!-- Floating Back to Top Button -->
+  <button 
+    *ngIf="showScrollTop"
+    (click)="scrollToTop()" 
+    class="scroll-top-btn fixed bottom-8 right-8 z-[99] flex items-center justify-center w-12 h-12 rounded-full text-white bg-gradient-to-br from-brand-indigo to-brand-cyan shadow-lg shadow-brand-indigo/20 cursor-pointer hover:scale-110 active:scale-95 transition-all duration-300 animate-fade-in"
+    aria-label="Back to top"
+  >
+    <i class="fas fa-chevron-up"></i>
+  </button>
 </footer>

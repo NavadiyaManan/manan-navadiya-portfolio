@@ -1,0 +1,9 @@
+.testimonial-card {
+  transition: var(--transition-smooth);
+  
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(99, 102, 241, 0.12);
+    border-color: rgba(99, 102, 241, 0.2);
+  }
+}

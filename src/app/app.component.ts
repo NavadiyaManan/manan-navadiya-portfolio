@@ -7,12 +7,24 @@ import { ExperienceComponent } from "./experience/experience.component";
 import { AboutComponent } from "./about/about.component";
 import { HeaderComponent } from "./header/header.component";
 import { FooterComponent } from "./footer/footer.component";
+import { ServicesComponent } from "./services/services.component";
+import { ContactComponent } from "./contact/contact.component";
 
 @Component({
   selector: 'app-root',
-  imports: [ProjectsComponent, SkillsComponent, EducationComponent, ExperienceComponent, AboutComponent, HeaderComponent, FooterComponent],
+  imports: [
+    ProjectsComponent, 
+    SkillsComponent, 
+    EducationComponent, 
+    ExperienceComponent, 
+    AboutComponent, 
+    HeaderComponent, 
+    FooterComponent,
+    ServicesComponent,
+    ContactComponent
+  ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'manan-navadiya-portfolio';

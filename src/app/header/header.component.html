@@ -1,7 +1,7 @@
 <!-- Sticky Header Navbar -->
 <header class="navbar">
   <div class="navbar-container">
-    <div class="logo" (click)="smoothScroll('#about')">
+    <div class="logo" (click)="smoothScroll('#home')">
       <span>MN.</span>
     </div>
 
@@ -11,38 +11,39 @@
     </button>
 
     <nav class="nav-links" [class.active]="isMenuOpen">
-      <a (click)="smoothScroll('#about'); closeMenu()">About</a>
-      <a (click)="smoothScroll('#experience'); closeMenu()">Experience</a>
-      <a (click)="smoothScroll('#education'); closeMenu()">Education</a>
-      <a (click)="smoothScroll('#skills'); closeMenu()">Skills</a>
-      <a (click)="smoothScroll('#projects'); closeMenu()">Projects</a>
-      <a (click)="smoothScroll('#contact'); closeMenu()" class="nav-cta">Connect</a>
+      <a (click)="smoothScroll('#about'); closeMenu()" [class.active]="activeSection === 'about'">About</a>
+      <a (click)="smoothScroll('#services'); closeMenu()" [class.active]="activeSection === 'services'">Services</a>
+      <a (click)="smoothScroll('#experience'); closeMenu()" [class.active]="activeSection === 'experience'">Experience</a>
+      <a (click)="smoothScroll('#education'); closeMenu()" [class.active]="activeSection === 'education'">Education</a>
+      <a (click)="smoothScroll('#skills'); closeMenu()" [class.active]="activeSection === 'skills'">Skills</a>
+      <a (click)="smoothScroll('#projects'); closeMenu()" [class.active]="activeSection === 'projects'">Projects</a>
+      <a (click)="smoothScroll('#contact'); closeMenu()" class="nav-cta" [class.active]="activeSection === 'contact'">Connect</a>
 
       <!-- Theme Switcher Dropdown Container -->
       <div class="theme-switcher">
         <button class="theme-btn" (click)="toggleThemeDropdown()" aria-label="Select Theme">
           @if (themeMode === 'light') {
-          <i class="fas fa-sun theme-icon"></i>
+            <i class="fas fa-sun theme-icon"></i>
           } @else if (themeMode === 'dark') {
-          <i class="fas fa-moon theme-icon"></i>
+            <i class="fas fa-moon theme-icon"></i>
           } @else {
-          <i class="fas fa-desktop theme-icon"></i>
+            <i class="fas fa-desktop theme-icon"></i>
           }
           <i class="fas fa-chevron-down caret-icon"></i>
         </button>
 
         @if (isThemeDropdownOpen) {
-        <div class="theme-dropdown glass-card">
-          <button (click)="selectTheme('light')" [class.active]="themeMode === 'light'">
-            <i class="fas fa-sun"></i> Light
-          </button>
-          <button (click)="selectTheme('dark')" [class.active]="themeMode === 'dark'">
-            <i class="fas fa-moon"></i> Dark
-          </button>
-          <button (click)="selectTheme('system')" [class.active]="themeMode === 'system'">
-            <i class="fas fa-desktop"></i> System
-          </button>
-        </div>
+          <div class="theme-dropdown glass-card">
+            <button (click)="selectTheme('light')" [class.active]="themeMode === 'light'">
+              <i class="fas fa-sun"></i> Light
+            </button>
+            <button (click)="selectTheme('dark')" [class.active]="themeMode === 'dark'">
+              <i class="fas fa-moon"></i> Dark
+            </button>
+            <button (click)="selectTheme('system')" [class.active]="themeMode === 'system'">
+              <i class="fas fa-desktop"></i> System
+            </button>
+          </div>
         }
       </div>
     </nav>
@@ -51,37 +52,79 @@
 
 <!-- Hero Section -->
 <section class="hero" id="home">
+  <!-- Glowing Background Orbs -->
   <div class="hero-bg-overlay"></div>
+  <div class="glow-orb orb-1"></div>
+  <div class="glow-orb orb-2"></div>
+  
   <div class="hero-container">
     <div class="hero-content">
-      <span class="hero-subtitle">WELCOME TO MY PORTFOLIO</span>
+      <!-- Availability Status Badge -->
+      <div class="availability-badge">
+        <span class="pulse-dot"></span>
+        <span>Available for full-time roles & international client work</span>
+      </div>
+
       <h1 class="hero-title">
-        Hi, I'm <span class="gradient-text">Manan Navadiya</span>
+        Building Scalable <span class="gradient-text">Enterprise Apps</span>
       </h1>
-      <h2 class="hero-tagline">
-        Full Stack Developer at <span class="company-highlight">Astral Ltd</span>
-      </h2>
+      
+      <!-- Typing Role Tagline -->
+      <div class="typing-container">
+        <span class="role-static">I am a </span>
+        <span class="role-typed text-brand-cyan">{{ typedText }}</span>
+        <span class="typing-cursor">|</span>
+      </div>
+
       <p class="hero-description">
-        Crafting high-performance, beautiful, and user-centric web applications. Specializing in Angular development and
-        enterprise integration to build seamless digital experiences.
+        I help businesses build fast, scalable, and modern web applications using **Angular**, **.NET Core**, **SQL Server**, and cloud architectures. Currently upgrading critical enterprise workflows at **Astral Ltd**.
       </p>
 
       <div class="hero-actions">
-        <a (click)="smoothScroll('#projects')" class="btn btn-primary">
+        <a (click)="smoothScroll('#contact')" class="btn btn-primary">
+          Hire Me <i class="fas fa-paper-plane"></i>
+        </a>
+        <a (click)="smoothScroll('#projects')" class="btn btn-secondary">
           View Projects <i class="fas fa-arrow-right"></i>
         </a>
-        <a (click)="smoothScroll('#contact')" class="btn btn-secondary">
-          Get in Touch
+        <a href="resume.pdf" download="Manan_Navadiya_Resume.pdf" class="btn btn-resume">
+          <i class="fas fa-download"></i> CV
         </a>
+      </div>
+
+      <!-- Quick Social Icons -->
+      <div class="hero-socials">
+        <a href="https://github.com/NavadiyaManan" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/manan-navadiya-3223401bb/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="mailto:man.navadiya110@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
       </div>
     </div>
 
+    <!-- Right Side: Graphic Visual with Floating Tech Badges -->
     <div class="hero-visual">
       <div class="visual-glow"></div>
       <div class="visual-card">
         <div class="avatar-frame">
           <img src="manan_profile_2.png" alt="Manan Navadiya" class="hero-avatar">
         </div>
+      </div>
+
+      <!-- Floating Technology Cards -->
+      <div class="tech-badge badge-angular animate-float-delay-1">
+        <i class="fab fa-angular text-rose-500"></i>
+        <span>Angular</span>
+      </div>
+      <div class="tech-badge badge-dotnet animate-float-delay-2">
+        <i class="fas fa-code text-violet-500"></i>
+        <span>.NET</span>
+      </div>
+      <div class="tech-badge badge-sql animate-float-delay-3">
+        <i class="fas fa-database text-cyan-400"></i>
+        <span>SQL Server</span>
+      </div>
+      <div class="tech-badge badge-azure animate-float-delay-4">
+        <i class="fab fa-microsoft text-blue-500"></i>
+        <span>Azure</span>
       </div>
     </div>
   </div>

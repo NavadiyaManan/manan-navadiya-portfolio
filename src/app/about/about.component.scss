@@ -1,0 +1,49 @@
+.profile-frame {
+  transform: rotate(-1deg);
+  transition: var(--transition-smooth);
+  
+  &:hover {
+    transform: rotate(0) translateY(-5px);
+  }
+}
+
+.profile-image-container {
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.achievement-item {
+  p {
+    line-height: 1.5;
+  }
+}
+
+.stat-card {
+  transition: var(--transition-smooth);
+  
+  .stat-num {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  &:hover {
+    transform: translateY(-4px);
+    border-color: rgba(99, 102, 241, 0.2);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.1);
+  }
+}
+
+@media (max-width: 992px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .achievement-item {
+    text-align: left;
+  }
+  
+  .cta-buttons {
+    justify-content: center;
+  }
+}

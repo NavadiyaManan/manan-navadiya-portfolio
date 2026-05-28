@@ -1,0 +1,113 @@
+.skills-categories {
+  margin-top: 40px;
+}
+
+.skill-item {
+  transition: var(--transition-smooth);
+  
+  i {
+    transition: var(--transition-smooth);
+  }
+  
+  span {
+    transition: var(--transition-smooth);
+  }
+}
+
+/* Individual Brand Glow Customizations */
+
+/* Angular */
+.card-angular:hover {
+  border-color: rgba(244, 63, 94, 0.4);
+  box-shadow: 0 0 15px rgba(244, 63, 94, 0.25);
+  i { color: #f43f5e; }
+  span { color: #fff; }
+}
+
+/* JS/TS */
+.card-ts:hover {
+  border-color: rgba(251, 191, 36, 0.4);
+  box-shadow: 0 0 15px rgba(251, 191, 36, 0.25);
+  i { color: #fbbf24; }
+  span { color: #fff; }
+}
+
+/* HTML */
+.card-html:hover {
+  border-color: rgba(249, 115, 22, 0.4);
+  box-shadow: 0 0 15px rgba(249, 115, 22, 0.25);
+  i { color: #f97316; }
+  span { color: #fff; }
+}
+
+/* SCSS/Tailwind */
+.card-scss:hover {
+  border-color: rgba(236, 72, 153, 0.4);
+  box-shadow: 0 0 15px rgba(236, 72, 153, 0.25);
+  i { color: #ec4899; }
+  span { color: #fff; }
+}
+
+/* .NET Core */
+.card-dotnet:hover {
+  border-color: rgba(139, 92, 246, 0.4);
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.25);
+  i { color: #8b5cf6; }
+  span { color: #fff; }
+}
+
+/* Web API */
+.card-webapi:hover {
+  border-color: rgba(52, 211, 153, 0.4);
+  box-shadow: 0 0 15px rgba(52, 211, 153, 0.25);
+  i { color: #34d19d; }
+  span { color: #fff; }
+}
+
+/* Python */
+.card-python:hover {
+  border-color: rgba(96, 165, 250, 0.4);
+  box-shadow: 0 0 15px rgba(96, 165, 250, 0.25);
+  i { color: #60a5fa; }
+  span { color: #fff; }
+}
+
+/* Express */
+.card-express:hover {
+  border-color: rgba(45, 212, 191, 0.4);
+  box-shadow: 0 0 15px rgba(45, 212, 191, 0.25);
+  i { color: #2dd4bf; }
+  span { color: #fff; }
+}
+
+/* SQL Server */
+.card-sql:hover {
+  border-color: rgba(34, 211, 238, 0.4);
+  box-shadow: 0 0 15px rgba(34, 211, 238, 0.25);
+  i { color: #22d3ee; }
+  span { color: #fff; }
+}
+
+/* Git */
+.card-git:hover {
+  border-color: rgba(234, 88, 12, 0.4);
+  box-shadow: 0 0 15px rgba(234, 88, 12, 0.25);
+  i { color: #ea580c; }
+  span { color: #fff; }
+}
+
+/* Azure */
+.card-azure:hover {
+  border-color: rgba(59, 130, 246, 0.4);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.25);
+  i { color: #3b82f6; }
+  span { color: #fff; }
+}
+
+/* Postman */
+.card-postman:hover {
+  border-color: rgba(251, 146, 60, 0.4);
+  box-shadow: 0 0 15px rgba(251, 146, 60, 0.25);
+  i { color: #fb923c; }
+  span { color: #fff; }
+}

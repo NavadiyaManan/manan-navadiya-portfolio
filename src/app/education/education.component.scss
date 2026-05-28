@@ -1,0 +1,36 @@
+.education-timeline {
+  margin-top: 40px;
+}
+
+.education-card {
+  transition: var(--transition-smooth);
+  
+  &:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: var(--glow-shadow);
+  }
+}
+
+@media (min-width: 768px) {
+  .timeline-item {
+    &:nth-child(odd) {
+      .education-card {
+        text-align: left;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .timeline-line {
+    left: 16px !important;
+  }
+  
+  .node-marker {
+    left: -28px !important;
+  }
+  
+  .timeline-item {
+    padding-left: 15px !important;
+  }
+}

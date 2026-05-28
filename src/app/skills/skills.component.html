@@ -1,66 +1,83 @@
-<section id="skills">
+<section id="skills" class="relative">
   <div class="container">
     <h2 class="section-title">My <span>Skills</span></h2>
+    <p class="section-subtitle text-center text-brand-slate-400 max-w-2xl mx-auto -mt-8 mb-16 text-lg">
+      My professional technical toolkit for engineering full-stack cloud applications and enterprise automation.
+    </p>
     
-    <div class="skills-categories">
+    <div class="skills-categories grid grid-cols-1 md:grid-cols-3 gap-8">
       
       <!-- Category 1: Frontend -->
-      <div class="skills-category glass-card">
-        <h3><i class="fas fa-laptop-code"></i> Frontend Development</h3>
-        <div class="category-skills-grid">
-          <div class="skill-item angular-skill">
-            <i class="fab fa-angular"></i>
-            <span>Angular</span>
+      <div class="skills-category glass-card p-8 flex flex-col gap-6">
+        <h3 class="text-xl font-bold border-b border-brand-slate-800 pb-4 flex items-center gap-3 text-brand-slate-100">
+          <i class="fas fa-laptop-code text-brand-cyan"></i> Frontend Development
+        </h3>
+        <div class="category-skills-grid grid grid-cols-2 gap-4">
+          <div class="skill-item card-angular flex flex-col items-center justify-center p-5 rounded-xl border border-brand-slate-800 bg-brand-slate-900/40 text-center hover:scale-[1.03] transition-transform duration-300">
+            <i class="fab fa-angular text-4xl text-rose-500 mb-3"></i>
+            <span class="text-xs font-bold text-brand-slate-300">Angular</span>
           </div>
-          <div class="skill-item js-skill">
-            <i class="fab fa-js-square"></i>
-            <span>JS / TS</span>
+          <div class="skill-item card-ts flex flex-col items-center justify-center p-5 rounded-xl border border-brand-slate-800 bg-brand-slate-900/40 text-center hover:scale-[1.03] transition-transform duration-300">
+            <i class="fab fa-js-square text-4xl text-amber-400 mb-3"></i>
+            <span class="text-xs font-bold text-brand-slate-300">JS / TS</span>
           </div>
-          <div class="skill-item html-skill">
-            <i class="fab fa-html5"></i>
-            <span>HTML5 / CSS3</span>
+          <div class="skill-item card-html flex flex-col items-center justify-center p-5 rounded-xl border border-brand-slate-800 bg-brand-slate-900/40 text-center hover:scale-[1.03] transition-transform duration-300">
+            <i class="fab fa-html5 text-4xl text-orange-500 mb-3"></i>
+            <span class="text-xs font-bold text-brand-slate-300">HTML5 / CSS3</span>
+          </div>
+          <div class="skill-item card-scss flex flex-col items-center justify-center p-5 rounded-xl border border-brand-slate-800 bg-brand-slate-900/40 text-center hover:scale-[1.03] transition-transform duration-300">
+            <i class="fab fa-sass text-4xl text-pink-500 mb-3"></i>
+            <span class="text-xs font-bold text-brand-slate-300">SCSS / Tailwind</span>
           </div>
         </div>
       </div>
       
-      <!-- Category 2: Backend & Mobile -->
-      <div class="skills-category glass-card">
-        <h3><i class="fas fa-server"></i> Backend & Mobile</h3>
-        <div class="category-skills-grid">
-          <div class="skill-item dotnet-skill">
-            <i class="fas fa-code"></i>
-            <span>.NET Core</span>
+      <!-- Category 2: Backend -->
+      <div class="skills-category glass-card p-8 flex flex-col gap-6">
+        <h3 class="text-xl font-bold border-b border-brand-slate-800 pb-4 flex items-center gap-3 text-brand-slate-100">
+          <i class="fas fa-server text-brand-indigo"></i> Backend & APIs
+        </h3>
+        <div class="category-skills-grid grid grid-cols-2 gap-4">
+          <div class="skill-item card-dotnet flex flex-col items-center justify-center p-5 rounded-xl border border-brand-slate-800 bg-brand-slate-900/40 text-center hover:scale-[1.03] transition-transform duration-300">
+            <i class="fas fa-code text-4xl text-violet-500 mb-3"></i>
+            <span class="text-xs font-bold text-brand-slate-300">.NET Core / C#</span>
           </div>
-          <div class="skill-item android-skill">
-            <i class="fab fa-android"></i>
-            <span>Android (Java)</span>
+          <div class="skill-item card-webapi flex flex-col items-center justify-center p-5 rounded-xl border border-brand-slate-800 bg-brand-slate-900/40 text-center hover:scale-[1.03] transition-transform duration-300">
+            <i class="fas fa-link text-4xl text-emerald-400 mb-3"></i>
+            <span class="text-xs font-bold text-brand-slate-300">ASP.NET Web API</span>
           </div>
-          <div class="skill-item python-skill">
-            <i class="fab fa-python"></i>
-            <span>Python</span>
+          <div class="skill-item card-python flex flex-col items-center justify-center p-5 rounded-xl border border-brand-slate-800 bg-brand-slate-900/40 text-center hover:scale-[1.03] transition-transform duration-300">
+            <i class="fab fa-python text-4xl text-blue-400 mb-3"></i>
+            <span class="text-xs font-bold text-brand-slate-300">Python</span>
           </div>
-          <div class="skill-item r-skill">
-            <i class="fas fa-chart-line"></i>
-            <span>R Programming</span>
+          <div class="skill-item card-express flex flex-col items-center justify-center p-5 rounded-xl border border-brand-slate-800 bg-brand-slate-900/40 text-center hover:scale-[1.03] transition-transform duration-300">
+            <i class="fas fa-network-wired text-4xl text-teal-400 mb-3"></i>
+            <span class="text-xs font-bold text-brand-slate-300">Express / Node</span>
           </div>
         </div>
       </div>
       
       <!-- Category 3: Databases & Tools -->
-      <div class="skills-category glass-card">
-        <h3><i class="fas fa-toolbox"></i> Databases & Tools</h3>
-        <div class="category-skills-grid">
-          <div class="skill-item sql-skill">
-            <i class="fas fa-database"></i>
-            <span>SQL / MySQL</span>
+      <div class="skills-category glass-card p-8 flex flex-col gap-6">
+        <h3 class="text-xl font-bold border-b border-brand-slate-800 pb-4 flex items-center gap-3 text-brand-slate-100">
+          <i class="fas fa-tools text-brand-cyan"></i> Databases & Tools
+        </h3>
+        <div class="category-skills-grid grid grid-cols-2 gap-4">
+          <div class="skill-item card-sql flex flex-col items-center justify-center p-5 rounded-xl border border-brand-slate-800 bg-brand-slate-900/40 text-center hover:scale-[1.03] transition-transform duration-300">
+            <i class="fas fa-database text-4xl text-cyan-400 mb-3"></i>
+            <span class="text-xs font-bold text-brand-slate-300">SQL Server / EF</span>
           </div>
-          <div class="skill-item sqlite-skill">
-            <i class="fas fa-mobile-alt"></i>
-            <span>SQLite</span>
+          <div class="skill-item card-git flex flex-col items-center justify-center p-5 rounded-xl border border-brand-slate-800 bg-brand-slate-900/40 text-center hover:scale-[1.03] transition-transform duration-300">
+            <i class="fab fa-git-alt text-4xl text-orange-600 mb-3"></i>
+            <span class="text-xs font-bold text-brand-slate-300">Git / GitHub</span>
           </div>
-          <div class="skill-item git-skill">
-            <i class="fab fa-git-alt"></i>
-            <span>Git / GitHub</span>
+          <div class="skill-item card-azure flex flex-col items-center justify-center p-5 rounded-xl border border-brand-slate-800 bg-brand-slate-900/40 text-center hover:scale-[1.03] transition-transform duration-300">
+            <i class="fab fa-microsoft text-4xl text-blue-500 mb-3"></i>
+            <span class="text-xs font-bold text-brand-slate-300">Azure Cloud</span>
+          </div>
+          <div class="skill-item card-postman flex flex-col items-center justify-center p-5 rounded-xl border border-brand-slate-800 bg-brand-slate-900/40 text-center hover:scale-[1.03] transition-transform duration-300">
+            <i class="fas fa-paper-plane text-4xl text-orange-400 mb-3"></i>
+            <span class="text-xs font-bold text-brand-slate-300">Postman / APIs</span>
           </div>
         </div>
       </div>

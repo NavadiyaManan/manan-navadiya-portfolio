@@ -1,61 +1,94 @@
-<section id="experience">
+<section id="experience" class="relative">
   <div class="container">
     <h2 class="section-title">Professional <span>Experience</span></h2>
+    <p class="section-subtitle text-center text-brand-slate-400 max-w-2xl mx-auto -mt-8 mb-16 text-lg">
+      My professional career path building enterprise applications, handling database optimizations, and leading full-stack integrations.
+    </p>
     
-    <div class="experience-timeline">
-      <!-- Astral Ltd Card -->
-      <div class="experience-node glass-card">
-        <div class="node-marker"></div>
-        <div class="experience-header">
-          <div class="role-info">
-            <h3>Executive</h3>
-            <span class="company"><i class="fas fa-briefcase"></i> Astral Ltd</span>
-          </div>
-          <span class="duration">Mar 2026 - Present</span>
-        </div>
+    <div class="experience-timeline relative pl-8 md:pl-0 md:flex md:flex-col md:items-center">
+      <!-- Central vertical timeline line -->
+      <div class="timeline-line absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-brand-indigo via-brand-cyan to-brand-slate-800 -translate-x-1/2"></div>
+      
+      <!-- Astral Ltd Node -->
+      <div class="timeline-item relative mb-12 w-full md:w-1/2 md:pr-12 md:self-start md:text-right">
+        <!-- Node Marker dot -->
+        <div class="node-marker absolute left-[-24px] md:left-auto md:right-[-9px] top-8 w-4 h-4 rounded-full bg-brand-cyan border-2 border-brand-slate-950 shadow-[0_0_12px_rgba(6,182,212,0.8)] z-10 animate-pulse"></div>
         
-        <p class="role-desc">
-          Driving technical implementations and development initiatives, maintaining and upgrading critical business application systems.
-        </p>
+        <div class="experience-node glass-card p-8 inline-block text-left w-full hover:scale-[1.01] transition-transform duration-300">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-4">
+            <div>
+              <span class="text-xs font-bold text-brand-cyan uppercase tracking-widest">Active Role</span>
+              <h3 class="text-2xl font-bold text-brand-slate-50 mt-1">Executive</h3>
+            </div>
+            <span class="duration-badge bg-brand-cyan/10 border border-brand-cyan/30 text-brand-cyan text-xs font-semibold px-3 py-1 rounded-full self-start md:self-center">
+              Mar 2026 - Present
+            </span>
+          </div>
+          
+          <h4 class="text-brand-slate-300 font-bold mb-4 flex items-center gap-2 text-sm uppercase tracking-wider">
+            <i class="fas fa-briefcase text-brand-indigo"></i> Astral Ltd
+          </h4>
+          
+          <p class="role-desc text-brand-slate-400 text-sm leading-relaxed mb-4">
+            Driving technical implementations, managing software releases, upgrading enterprise-scale daily management dashboards, and optimizing relational schemas for critical corporate operations.
+          </p>
+          
+          <ul class="achievements flex flex-col gap-2.5">
+            <li class="flex items-start gap-2.5 text-xs text-brand-slate-400">
+              <i class="fas fa-arrow-alt-circle-right text-brand-indigo mt-0.5 shrink-0"></i>
+              <span>Participate in architectural decisions regarding dashboard modularization and API optimization.</span>
+            </li>
+            <li class="flex items-start gap-2.5 text-xs text-brand-slate-400">
+              <i class="fas fa-arrow-alt-circle-right text-brand-indigo mt-0.5 shrink-0"></i>
+              <span>Refactor slow-running stored procedures and write clean, async services in C# .NET.</span>
+            </li>
+          </ul>
+        </div>
       </div>
 
-      <!-- Technomark Solutions Card -->
-      <div class="experience-node glass-card">
-        <div class="node-marker"></div>
-        <div class="experience-header">
-          <div class="role-info">
-            <h3>Executive Full Stack Developer</h3>
-            <span class="company"><i class="fas fa-briefcase"></i> Technomark Solutions</span>
+      <!-- Technomark / PathQuest Node -->
+      <div class="timeline-item relative mb-12 w-full md:w-1/2 md:pl-12 md:self-end">
+        <!-- Node Marker dot -->
+        <div class="node-marker absolute left-[-24px] md:left-[-9px] top-8 w-4 h-4 rounded-full bg-brand-indigo border-2 border-brand-slate-950 shadow-[0_0_12px_rgba(99,102,241,0.8)] z-10"></div>
+        
+        <div class="experience-node glass-card p-8 inline-block text-left w-full hover:scale-[1.01] transition-transform duration-300">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-4">
+            <div>
+              <span class="text-xs font-bold text-brand-indigo uppercase tracking-widest">Promotion Journey</span>
+              <h3 class="text-2xl font-bold text-brand-slate-50 mt-1">Executive Full Stack Developer</h3>
+            </div>
+            <span class="duration-badge bg-brand-indigo/10 border border-brand-indigo/30 text-brand-indigo text-xs font-semibold px-3 py-1 rounded-full self-start md:self-center">
+              Jan 2023 - Feb 2026
+            </span>
           </div>
-          <span class="duration">Jan 2023 - Feb 2026</span>
+          
+          <h4 class="text-brand-slate-300 font-bold mb-4 flex items-center gap-2 text-sm uppercase tracking-wider">
+            <i class="fas fa-briefcase text-brand-indigo"></i> Technomark Solutions / PathQuest
+          </h4>
+          
+          <p class="role-desc text-brand-slate-400 text-sm leading-relaxed mb-4">
+            Fast-tracked from Full Stack Intern to Jr. Developer, and ultimately to Executive Full Stack Developer. Headed the development and maintenance of robust accounting automation systems and reporting dashboards.
+          </p>
+          
+          <ul class="achievements flex flex-col gap-3">
+            <li class="flex items-start gap-2.5 text-xs text-brand-slate-400">
+              <i class="fas fa-check-circle text-brand-indigo mt-0.5 shrink-0"></i>
+              <span>Engineered responsive, dynamic web clients in **Angular** using RxJS, custom directives, and routing.</span>
+            </li>
+            <li class="flex items-start gap-2.5 text-xs text-brand-slate-400">
+              <i class="fas fa-check-circle text-brand-indigo mt-0.5 shrink-0"></i>
+              <span>Designed and optimized multi-tenant database infrastructures with isolated databases using SQL Server & EF Core.</span>
+            </li>
+            <li class="flex items-start gap-2.5 text-xs text-brand-slate-400">
+              <i class="fas fa-check-circle text-brand-indigo mt-0.5 shrink-0"></i>
+              <span>Integrated Sage Intacct, Xero, and QuickBooks Online APIs for secure, automated financial synchronization.</span>
+            </li>
+            <li class="flex items-start gap-2.5 text-xs text-brand-slate-400">
+              <i class="fas fa-check-circle text-brand-indigo mt-0.5 shrink-0"></i>
+              <span>Developed serverless background systems using Azure Functions and worker roles for billing reconciliations.</span>
+            </li>
+          </ul>
         </div>
-        
-        <p class="role-desc">
-          Progressed from Full Stack Intern to Jr. Full Stack Developer, and ultimately to Executive Full Stack Developer. Led the end-to-end design, implementation, and optimization of enterprise financial, business intelligence, and tax automation software.
-        </p>
-        
-        <ul class="achievements">
-          <li>
-            <i class="fas fa-check-circle"></i>
-            <span>Engineered responsive, highly interactive single-page applications (SPAs) using **Angular** and RxJS.</span>
-          </li>
-          <li>
-            <i class="fas fa-check-circle"></i>
-            <span>Integrated secure RESTful APIs written in **C# .NET Core**, achieving efficient asynchronous data exchange.</span>
-          </li>
-          <li>
-            <i class="fas fa-check-circle"></i>
-            <span>Designed scalable multi-tenant database architectures using SQL Server and MySQL with isolated databases.</span>
-          </li>
-          <li>
-            <i class="fas fa-check-circle"></i>
-            <span>Implemented third-party accounting integrations with Sage Intacct, Xero, and QuickBooks Online (QBO).</span>
-          </li>
-          <li>
-            <i class="fas fa-check-circle"></i>
-            <span>Automated complex approval workflows, SSO authentication, and cloud storage (Azure Blob) integrations.</span>
-          </li>
-        </ul>
       </div>
     </div>
   </div>

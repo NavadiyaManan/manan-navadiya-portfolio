@@ -1,0 +1,43 @@
+<section id="testimonials" class="relative">
+  <div class="container">
+    <h2 class="section-title">Client <span>Feedback</span></h2>
+    <p class="section-subtitle text-center text-brand-slate-400 max-w-2xl mx-auto -mt-8 mb-16 text-lg">
+      See what managers and clients say about my technical capabilities, problem-solving, and delivery quality.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      @for (item of testimonials; track item.name) {
+        <div class="testimonial-card glass-card relative p-8 flex flex-col justify-between group overflow-hidden">
+          <div class="quote-icon absolute top-6 right-6 text-brand-indigo/10 group-hover:text-brand-indigo/25 text-7xl font-serif select-none pointer-events-none transition-colors duration-300">
+            &ldquo;
+          </div>
+          
+          <div class="card-top mb-6">
+            <div class="stars flex gap-1 mb-4 text-amber-400">
+              @for (star of [1, 2, 3, 4, 5]; track star) {
+                <i class="fas fa-star text-sm"></i>
+              }
+            </div>
+            <p class="text-brand-slate-300 italic text-base leading-relaxed relative z-10">
+              "{{ item.quote }}"
+            </p>
+          </div>
+          
+          <div class="card-bottom border-t border-brand-slate-800 pt-4 mt-auto flex items-center gap-4">
+            <div class="avatar-placeholder flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-brand-indigo to-brand-cyan text-white font-bold text-lg">
+              {{ item.name.charAt(0) }}
+            </div>
+            <div>
+              <h4 class="font-bold text-brand-slate-50 text-base leading-tight group-hover:text-brand-cyan transition-colors duration-300">
+                {{ item.name }}
+              </h4>
+              <p class="text-brand-slate-400 text-xs mt-1">
+                {{ item.role }} &bull; <span class="text-brand-cyan font-medium">{{ item.company }}</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
