@@ -56,24 +56,30 @@ export class FirebaseService {
       timestamp: timestamp
     });
 
-    // 2. Store in mail collection (to trigger the Trigger Email from Firestore extension)
+    // 2. Send email via Web3Forms (No Firebase extensions or SMTP settings needed)
     try {
-      await addDoc(collection(this.db, 'mail'), {
-        to: 'man.navadiya110@gmail.com', // Your destination email
-        message: {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: '19113521-bf98-4088-993f-491b79556331',
+          name: data.name,
+          email: data.email,
           subject: `New Portfolio Message: ${data.subject}`,
-          text: `You have received a new message from your portfolio website:\n\nName: ${data.name}\nEmail: ${data.email}\nSubject: ${data.subject}\n\nMessage:\n${data.message}`,
-          html: `<p>You have received a new message from your portfolio website:</p>
-                 <p><strong>Name:</strong> ${data.name}</p>
-                 <p><strong>Email:</strong> ${data.email}</p>
-                 <p><strong>Subject:</strong> ${data.subject}</p>
-                 <p><strong>Message:</strong></p>
-                 <p>${data.message.replace(/\n/g, '<br>')}</p>`
-        }
+          message: data.message
+        })
       });
-    } catch (mailError) {
-      console.warn("Failed to write to mail trigger collection:", mailError);
-      // We don't fail the submission if just the mail trigger fails
+
+      const result = await response.json();
+      if (!result.success) {
+        console.warn("Web3Forms email delivery reported failure:", result);
+      }
+    } catch (emailError) {
+      console.warn("Failed to send email via Web3Forms:", emailError);
+      // We don't fail the entire submission if only the email delivery fails
     }
 
     return contactRef;
