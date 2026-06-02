@@ -9,6 +9,8 @@ import { HeaderComponent } from "./header/header.component";
 import { FooterComponent } from "./footer/footer.component";
 import { ServicesComponent } from "./services/services.component";
 import { ContactComponent } from "./contact/contact.component";
+import { CaseStudiesComponent } from "./case-studies/case-studies.component";
+import { GithubStatsComponent } from "./github-stats/github-stats.component";
 
 @Component({
   selector: 'app-root',
@@ -21,7 +23,9 @@ import { ContactComponent } from "./contact/contact.component";
     HeaderComponent, 
     FooterComponent,
     ServicesComponent,
-    ContactComponent
+    ContactComponent,
+    CaseStudiesComponent,
+    GithubStatsComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
