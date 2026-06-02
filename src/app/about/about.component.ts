@@ -2,6 +2,7 @@ import { Component, Inject, PLATFORM_ID, AfterViewInit, ElementRef, ViewChild } 
 import { Router } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
 import { ExperienceService } from '../experience.service';
+import { FirebaseService } from '../services/firebase.service';
 
 @Component({
   selector: 'app-about',
@@ -23,11 +24,12 @@ export class AboutComponent implements AfterViewInit {
   constructor(
     private experienceService : ExperienceService,
     private router: Router,
-    @Inject(PLATFORM_ID) private platformId: Object
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private firebaseService: FirebaseService
   ) {
     const expStr = this.experienceService.calculateExperience();
     this.experience = expStr;
-    this.experienceNum = parseFloat(expStr) || 3.4;
+    this.experienceNum = parseFloat(expStr) || 4.2; // Fallback to 4.2 if parse fails
   }
 
   ngAfterViewInit() {
@@ -64,7 +66,7 @@ export class AboutComponent implements AfterViewInit {
     }, 50);
 
     // Projects counter
-    const projectsTarget = 6; // 6 featured projects in list
+    const projectsTarget = 15; // Enterprise projects
     const projectsInterval = setInterval(() => {
       if (this.projectsCount >= projectsTarget) {
         this.projectsCount = projectsTarget;
@@ -72,10 +74,10 @@ export class AboutComponent implements AfterViewInit {
       } else {
         this.projectsCount++;
       }
-    }, 150);
+    }, 80);
 
     // Tools counter
-    const toolsTarget = 14; // tech stack items
+    const toolsTarget = 25; // Cloud and Core Tech
     const toolsInterval = setInterval(() => {
       if (this.toolsCount >= toolsTarget) {
         this.toolsCount = toolsTarget;
@@ -83,7 +85,7 @@ export class AboutComponent implements AfterViewInit {
       } else {
         this.toolsCount++;
       }
-    }, 80);
+    }, 45);
   }
 
   smoothScroll(fragment: string): void {
@@ -94,5 +96,13 @@ export class AboutComponent implements AfterViewInit {
         element.scrollIntoView({ behavior: 'smooth' });
       }
     });
+  }
+
+  trackCta(name: string): void {
+    this.firebaseService.logCtaClick(name);
+  }
+
+  trackResume(): void {
+    this.firebaseService.logResumeDownload();
   }
 }

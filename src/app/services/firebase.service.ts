@@ -1,7 +1,7 @@
 import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { initializeApp, FirebaseApp } from 'firebase/app';
-import { getAnalytics, Analytics } from 'firebase/analytics';
+import { getAnalytics, logEvent, Analytics } from 'firebase/analytics';
 import { getFirestore, collection, addDoc, Firestore } from 'firebase/firestore';
 
 @Injectable({
@@ -83,5 +83,39 @@ export class FirebaseService {
     }
 
     return contactRef;
+  }
+
+  /**
+   * Log resume download event in Firebase Analytics
+   */
+  logResumeDownload() {
+    if (isPlatformBrowser(this.platformId) && this.analytics) {
+      try {
+        logEvent(this.analytics, 'resume_download', {
+          format: 'pdf',
+          timestamp: new Date().toISOString()
+        });
+        console.log("Resume download logged successfully.");
+      } catch (error) {
+        console.warn("Failed to log resume download event:", error);
+      }
+    }
+  }
+
+  /**
+   * Log CTA click event in Firebase Analytics
+   */
+  logCtaClick(ctaName: string) {
+    if (isPlatformBrowser(this.platformId) && this.analytics) {
+      try {
+        logEvent(this.analytics, 'cta_click', {
+          button_name: ctaName,
+          timestamp: new Date().toISOString()
+        });
+        console.log(`CTA click '${ctaName}' logged successfully.`);
+      } catch (error) {
+        console.warn(`Failed to log CTA click event '${ctaName}':`, error);
+      }
+    }
   }
 }

@@ -1,0 +1,132 @@
+<section id="github-stats" class="relative">
+  <div class="container">
+    <h2 class="section-title">Coding <span>Activity</span></h2>
+    <p class="section-subtitle text-center text-slate-500 dark:text-brand-slate-400 max-w-2xl mx-auto -mt-8 mb-16 text-lg">
+      My open-source contributions, repository analytics, and development velocity indicators.
+    </p>
+
+    <!-- Loading State -->
+    @if (isLoading) {
+      <div class="flex flex-col items-center justify-center py-20 gap-4">
+        <i class="fas fa-circle-notch animate-spin text-4xl text-brand-indigo"></i>
+        <p class="text-sm text-slate-500 dark:text-brand-slate-400">Fetching live GitHub analytics...</p>
+      </div>
+    }
+
+    <!-- Error State -->
+    @if (isError && !isLoading) {
+      <div class="glass-card p-8 flex flex-col items-center justify-center text-center max-w-lg mx-auto gap-4">
+        <i class="fas fa-exclamation-triangle text-4xl text-amber-500"></i>
+        <h3 class="text-lg font-bold text-slate-900 dark:text-brand-slate-50">Unable to load live GitHub data</h3>
+        <p class="text-sm text-slate-500 dark:text-brand-slate-400 leading-relaxed">
+          Due to GitHub API rate limits or connection restrictions, we couldn't load the live stats. You can view my active repositories directly on my GitHub profile.
+        </p>
+        <a [href]="'https://github.com/' + username" target="_blank" class="btn btn-primary text-xs py-2.5 px-6 rounded-lg mt-2">
+          <i class="fab fa-github"></i> Visit My GitHub
+        </a>
+      </div>
+    }
+
+    <!-- Live Data State -->
+    @if (!isLoading && !isError) {
+      <div class="flex flex-col gap-8 animate-fade-in">
+        
+        <!-- Profile Stats Row -->
+        @if (profile) {
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="stat-card glass-card p-6 flex flex-col gap-2 hover:border-brand-indigo/40 transition-colors duration-300">
+              <div class="flex items-center justify-between text-brand-indigo">
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-brand-slate-400">Public Repos</span>
+                <i class="fas fa-code text-lg"></i>
+              </div>
+              <span class="text-3xl font-black text-slate-900 dark:text-brand-slate-50">{{ profile.public_repos }}</span>
+              <span class="text-xxs text-slate-400">Open-source & enterprise</span>
+            </div>
+
+            <div class="stat-card glass-card p-6 flex flex-col gap-2 hover:border-brand-cyan/40 transition-colors duration-300">
+              <div class="flex items-center justify-between text-brand-cyan">
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-brand-slate-400">Followers</span>
+                <i class="fas fa-users text-lg"></i>
+              </div>
+              <span class="text-3xl font-black text-slate-900 dark:text-brand-slate-50">{{ profile.followers }}</span>
+              <span class="text-xxs text-slate-400">Developers community</span>
+            </div>
+
+            <div class="stat-card glass-card p-6 flex flex-col gap-2 hover:border-brand-emerald/40 transition-colors duration-300">
+              <div class="flex items-center justify-between text-brand-emerald">
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-brand-slate-400">Following</span>
+                <i class="fas fa-user-friends text-lg"></i>
+              </div>
+              <span class="text-3xl font-black text-slate-900 dark:text-brand-slate-50">{{ profile.following }}</span>
+              <span class="text-xxs text-slate-400">Active industry network</span>
+            </div>
+
+            <div class="stat-card glass-card p-6 flex flex-col gap-2 hover:border-brand-indigo/40 transition-colors duration-300">
+              <div class="flex items-center justify-between text-violet-400">
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-brand-slate-400">Joined GitHub</span>
+                <i class="fas fa-calendar-alt text-lg"></i>
+              </div>
+              <span class="text-3xl font-black text-slate-900 dark:text-brand-slate-50">{{ profile.created_at.substring(0, 4) }}</span>
+              <span class="text-xxs text-slate-400">Over years of active commits</span>
+            </div>
+          </div>
+        }
+
+        <!-- Top Repositories Showcase -->
+        <div>
+          <h3 class="text-lg font-bold border-b border-slate-100 dark:border-brand-slate-800 pb-3 flex items-center gap-2 text-slate-900 dark:text-slate-100 mb-6">
+            <i class="fab fa-github text-brand-indigo"></i> Top Public Repositories
+          </h3>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            @for (repo of repos; track repo.name) {
+              <a [href]="repo.html_url" target="_blank" class="repo-card glass-card p-6 flex flex-col justify-between gap-4 hover:border-brand-indigo/40 hover:scale-[1.01] transition-all duration-300 group">
+                <div class="flex flex-col gap-2">
+                  <div class="flex items-center justify-between">
+                    <h4 class="text-base font-bold text-slate-900 dark:text-slate-100 group-hover:text-brand-cyan transition-colors duration-300">
+                      {{ repo.name }}
+                    </h4>
+                    <i class="fas fa-external-link-alt text-xs text-slate-400 group-hover:text-brand-cyan transition-colors"></i>
+                  </div>
+                  <p class="text-slate-600 dark:text-brand-slate-400 text-xs leading-relaxed line-clamp-2">
+                    {{ repo.description }}
+                  </p>
+                </div>
+
+                <div class="flex items-center justify-between text-[11px] text-slate-500 dark:text-brand-slate-400 border-t border-slate-100 dark:border-brand-slate-800/80 pt-3 mt-2">
+                  <!-- Language Pill -->
+                  <div class="flex items-center gap-1.5">
+                    <span 
+                      class="w-2.5 h-2.5 rounded-full"
+                      [ngClass]="{
+                        'bg-blue-500': repo.language === 'TypeScript',
+                        'bg-yellow-400': repo.language === 'JavaScript',
+                        'bg-purple-600': repo.language === 'C#',
+                        'bg-orange-500': repo.language === 'HTML',
+                        'bg-pink-500': repo.language === 'CSS' || repo.language === 'SCSS',
+                        'bg-emerald-500': repo.language === 'Python',
+                        'bg-slate-400': repo.language !== 'TypeScript' && repo.language !== 'JavaScript' && repo.language !== 'C#' && repo.language !== 'HTML' && repo.language !== 'CSS' && repo.language !== 'SCSS' && repo.language !== 'Python'
+                      }"
+                    ></span>
+                    <span>{{ repo.language }}</span>
+                  </div>
+
+                  <!-- Stars & Forks -->
+                  <div class="flex items-center gap-4">
+                    <span class="flex items-center gap-1">
+                      <i class="fas fa-star text-amber-400"></i> {{ repo.stargazers_count }}
+                    </span>
+                    <span class="flex items-center gap-1">
+                      <i class="fas fa-code-branch text-brand-cyan"></i> {{ repo.forks_count }}
+                    </span>
+                  </div>
+                </div>
+              </a>
+            }
+          </div>
+        </div>
+
+      </div>
+    }
+  </div>
+</section>

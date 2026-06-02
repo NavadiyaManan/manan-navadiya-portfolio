@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FirebaseService } from '../services/firebase.service';
 
 export interface Project {
   title: string;
@@ -25,6 +26,8 @@ export interface Project {
 export class ProjectsComponent {
   activeFilter: 'all' | 'angular' | 'dotnet' | 'fullstack' | 'sql' = 'all';
   selectedProject: Project | null = null;
+
+  constructor(private firebaseService: FirebaseService) {}
 
   projects: Project[] = [
     {
@@ -185,6 +188,7 @@ export class ProjectsComponent {
 
   openModal(project: Project): void {
     this.selectedProject = project;
+    this.firebaseService.logCtaClick(`project_view_${project.title.replace(/\s+/g, '_').toLowerCase()}`);
     // Lock scroll
     if (typeof document !== 'undefined') {
       document.body.style.overflow = 'hidden';
@@ -197,5 +201,9 @@ export class ProjectsComponent {
     if (typeof document !== 'undefined') {
       document.body.style.overflow = '';
     }
+  }
+
+  trackProjectLink(projectTitle: string, linkType: 'github' | 'demo'): void {
+    this.firebaseService.logCtaClick(`project_${linkType}_${projectTitle.replace(/\s+/g, '_').toLowerCase()}`);
   }
 }

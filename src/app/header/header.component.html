@@ -81,13 +81,13 @@
       </p>
 
       <div class="hero-actions">
-        <a (click)="smoothScroll('#contact')" class="btn btn-primary">
+        <a (click)="smoothScroll('#contact'); trackCta('hero_hire_me')" class="btn btn-primary">
           Hire Me <i class="fas fa-paper-plane"></i>
         </a>
-        <a (click)="smoothScroll('#projects')" class="btn btn-secondary">
+        <a (click)="smoothScroll('#projects'); trackCta('hero_view_projects')" class="btn btn-secondary">
           View Projects <i class="fas fa-arrow-right"></i>
         </a>
-        <a href="resume.pdf" download="Manan_Navadiya_Resume.pdf" class="btn btn-resume">
+        <a href="resume.pdf" download="Manan_Navadiya_Resume.pdf" (click)="trackResume()" class="btn btn-resume">
           <i class="fas fa-download"></i> CV
         </a>
       </div>

@@ -1,6 +1,7 @@
 import { Component, Inject, PLATFORM_ID, OnInit, HostListener } from '@angular/core';
 import { isPlatformBrowser, CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { FirebaseService } from '../services/firebase.service';
 
 @Component({
   selector: 'app-header',
@@ -33,7 +34,8 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private router: Router,
-    @Inject(PLATFORM_ID) private platformId: Object
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private firebaseService: FirebaseService
   ) {}
 
   ngOnInit() {
@@ -153,5 +155,13 @@ export class HeaderComponent implements OnInit {
         element.scrollIntoView({ behavior: 'smooth' });
       }
     });
+  }
+
+  trackCta(name: string): void {
+    this.firebaseService.logCtaClick(name);
+  }
+
+  trackResume(): void {
+    this.firebaseService.logResumeDownload();
   }
 }

@@ -1,7 +1,7 @@
 <section id="projects" class="relative">
   <div class="container">
     <h2 class="section-title">Featured <span>Projects</span></h2>
-    <p class="section-subtitle text-center text-brand-slate-400 max-w-2xl mx-auto -mt-8 mb-16 text-lg">
+    <p class="section-subtitle text-center text-slate-500 dark:text-brand-slate-400 max-w-2xl mx-auto -mt-8 mb-16 text-lg">
       A showcase of enterprise dashboards, API workflow automations, and database integrations built for scale and business impact.
     </p>
     
@@ -34,24 +34,24 @@
                 {{ project.badge }}
               </span>
             </div>
-            <h3 class="text-xl font-bold text-brand-slate-50 group-hover:text-brand-cyan transition-colors duration-300 line-clamp-1">
+            <h3 class="text-xl font-bold text-slate-900 dark:text-brand-slate-50 group-hover:text-brand-cyan transition-colors duration-300 line-clamp-1">
               {{ project.title }}
             </h3>
             
-            <p class="project-summary text-brand-slate-400 text-sm leading-relaxed line-clamp-3">
+            <p class="project-summary text-slate-600 dark:text-brand-slate-400 text-sm leading-relaxed line-clamp-3">
               {{ project.summary }}
             </p>
             
             <div class="tech-stack flex flex-wrap gap-1.5 mt-auto">
               @for (techItem of project.tech; track techItem) {
-                <span class="tech-pill text-xxs font-bold text-brand-slate-300 bg-brand-slate-800 border border-brand-slate-700/60 px-2 py-0.5 rounded">
+                <span class="tech-pill text-xxs font-bold text-slate-700 dark:text-brand-slate-300 bg-slate-50 dark:bg-brand-slate-800 border border-slate-200 dark:border-brand-slate-700/60 px-2 py-0.5 rounded">
                   {{ techItem }}
                 </span>
               }
             </div>
             
-            <div class="project-actions flex items-center justify-between border-t border-brand-slate-800 pt-4 mt-2">
-              <button (click)="openModal(project)" class="text-brand-cyan text-sm font-semibold hover:text-white flex items-center gap-1.5 transition-colors">
+            <div class="project-actions flex items-center justify-between border-t border-slate-100 dark:border-brand-slate-800 pt-4 mt-2">
+              <button (click)="openModal(project)" class="text-brand-cyan text-sm font-semibold hover:text-brand-indigo dark:hover:text-white flex items-center gap-1.5 transition-colors">
                 Read Case Study <i class="fas fa-arrow-right text-xs"></i>
               </button>
             </div>
@@ -63,15 +63,15 @@
     <!-- Case Study Interactive Details Modal -->
     @if (selectedProject) {
       <div class="modal-backdrop fixed inset-0 z-[1050] flex items-center justify-center p-4 bg-brand-slate-950/80 backdrop-blur-sm animate-fade-in" (click)="closeModal()">
-        <div class="modal-card glass-card w-full max-w-4xl max-h-[85vh] overflow-y-auto relative flex flex-col p-0 bg-brand-slate-900 border border-brand-slate-800/80 shadow-2xl animate-scale-up" (click)="$event.stopPropagation()">
+        <div class="modal-card glass-card w-full max-w-4xl max-h-[85vh] overflow-y-auto relative flex flex-col p-0 bg-white dark:bg-brand-slate-900 border border-slate-200 dark:border-brand-slate-800/80 shadow-2xl animate-scale-up" (click)="$event.stopPropagation()">
           
           <!-- Modal Header -->
-          <div class="modal-header flex items-center justify-between p-6 border-b border-brand-slate-800">
+          <div class="modal-header flex items-center justify-between p-6 border-b border-slate-100 dark:border-brand-slate-800">
             <div>
               <span class="text-xxs font-bold text-brand-indigo bg-brand-indigo/10 border border-brand-indigo/20 px-2.5 py-1 rounded uppercase tracking-wider">{{ selectedProject.badge }}</span>
-              <h3 class="text-2xl font-extrabold text-brand-slate-50 mt-2">{{ selectedProject.title }}</h3>
+              <h3 class="text-2xl font-extrabold text-slate-900 dark:text-brand-slate-50 mt-2">{{ selectedProject.title }}</h3>
             </div>
-            <button class="close-btn text-brand-slate-400 hover:text-white text-2xl w-8 h-8 rounded-full flex items-center justify-center bg-brand-slate-800 transition-colors" (click)="closeModal()">
+            <button class="close-btn text-slate-500 dark:text-brand-slate-400 hover:text-slate-900 dark:hover:text-white text-2xl w-8 h-8 rounded-full flex items-center justify-center bg-slate-100 dark:bg-brand-slate-800 transition-colors" (click)="closeModal()">
               &times;
             </button>
           </div>
@@ -80,7 +80,7 @@
           <div class="modal-body p-6 md:p-8 flex flex-col gap-8">
             <!-- Technology Stack (No image or links) -->
             <div class="flex flex-col gap-3">
-              <h4 class="text-sm uppercase tracking-wider font-extrabold text-brand-slate-300">Technology Stack</h4>
+              <h4 class="text-sm uppercase tracking-wider font-extrabold text-slate-500 dark:text-brand-slate-300">Technology Stack</h4>
               <div class="flex flex-wrap gap-2">
                 @for (techItem of selectedProject.tech; track techItem) {
                   <span class="bg-brand-indigo/10 border border-brand-indigo/35 text-brand-indigo text-xs font-semibold px-3 py-1 rounded-full">
@@ -92,8 +92,8 @@
 
             <!-- Project Background / Description -->
             <div>
-              <h4 class="text-lg font-bold text-brand-slate-50 mb-3 border-l-2 border-brand-indigo pl-3">Project Overview</h4>
-              <p class="text-brand-slate-300 text-sm leading-relaxed">
+              <h4 class="text-lg font-bold text-slate-900 dark:text-brand-slate-50 mb-3 border-l-2 border-brand-indigo pl-3">Project Overview</h4>
+              <p class="text-slate-700 dark:text-brand-slate-300 text-sm leading-relaxed">
                 {{ selectedProject.description }}
               </p>
             </div>
@@ -105,7 +105,7 @@
               </div>
               <div>
                 <h4 class="text-brand-emerald font-extrabold text-base uppercase tracking-wider">Business Impact & Performance</h4>
-                <p class="text-brand-slate-200 text-sm mt-1 leading-relaxed">
+                <p class="text-slate-800 dark:text-slate-200 text-sm mt-1 leading-relaxed">
                   {{ selectedProject.businessImpact }}
                 </p>
               </div>
@@ -113,10 +113,10 @@
 
             <!-- Core Features checklist -->
             <div>
-              <h4 class="text-lg font-bold text-brand-slate-50 mb-3 border-l-2 border-brand-indigo pl-3">Key Implementation Details</h4>
+              <h4 class="text-lg font-bold text-slate-900 dark:text-brand-slate-50 mb-3 border-l-2 border-brand-indigo pl-3">Key Implementation Details</h4>
               <ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
                 @for (detail of selectedProject.details; track detail) {
-                  <li class="flex items-start gap-2.5 text-brand-slate-300 text-sm leading-normal">
+                  <li class="flex items-start gap-2.5 text-slate-700 dark:text-brand-slate-300 text-sm leading-normal">
                     <i class="fas fa-check text-brand-cyan mt-1 shrink-0"></i>
                     <span>{{ detail }}</span>
                   </li>
@@ -126,15 +126,15 @@
 
             <!-- Data Workflow Steps -->
             <div>
-              <h4 class="text-lg font-bold text-brand-slate-50 mb-4 border-l-2 border-brand-indigo pl-3">Platform Data Flow / Architecture</h4>
+              <h4 class="text-lg font-bold text-slate-900 dark:text-brand-slate-50 mb-4 border-l-2 border-brand-indigo pl-3">Platform Data Flow / Architecture</h4>
               <div class="workflow-steps flex flex-col gap-4 pl-4 relative">
-                <div class="workflow-line absolute left-[9px] top-4 bottom-4 w-0.5 bg-brand-slate-800"></div>
+                <div class="workflow-line absolute left-[9px] top-4 bottom-4 w-0.5 bg-slate-100 dark:bg-brand-slate-800"></div>
                 @for (step of selectedProject.workflowSteps; track step; let idx = $index) {
                   <div class="workflow-step flex gap-4 items-start relative z-10">
                     <span class="w-5 h-5 rounded-full flex items-center justify-center bg-brand-indigo text-white font-bold text-xxs shrink-0 shadow-[0_0_10px_rgba(99,102,241,0.5)]">
                       {{ idx + 1 }}
                     </span>
-                    <p class="text-brand-slate-300 text-sm pt-0.5">{{ step }}</p>
+                    <p class="text-slate-700 dark:text-brand-slate-300 text-sm pt-0.5">{{ step }}</p>
                   </div>
                 }
               </div>
@@ -143,7 +143,19 @@
           </div>
 
           <!-- Modal Footer -->
-          <div class="modal-footer p-6 border-t border-brand-slate-800 flex justify-end">
+          <div class="modal-footer p-6 border-t border-slate-100 dark:border-brand-slate-800 flex justify-between items-center">
+            <div class="flex gap-3">
+              @if (selectedProject.githubUrl && selectedProject.githubUrl !== '#') {
+                <a [href]="selectedProject.githubUrl" target="_blank" (click)="trackProjectLink(selectedProject.title, 'github')" class="btn btn-secondary text-xs py-2 px-4 rounded-lg flex items-center gap-1.5">
+                  <i class="fab fa-github"></i> View Code
+                </a>
+              }
+              @if (selectedProject.demoUrl && selectedProject.demoUrl !== '#') {
+                <a [href]="selectedProject.demoUrl" target="_blank" (click)="trackProjectLink(selectedProject.title, 'demo')" class="btn btn-primary text-xs py-2 px-4 rounded-lg flex items-center gap-1.5">
+                  <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+              }
+            </div>
             <button class="btn btn-secondary text-xs py-2 px-5 rounded-lg" (click)="closeModal()">
               Close Case Study
             </button>
