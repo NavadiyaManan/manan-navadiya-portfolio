@@ -172,6 +172,52 @@ export class ProjectsComponent {
         'Spotify Web API playlist fetch based on emotion tags',
         'Audio player rendering music recommendations stream'
       ]
+    },
+    {
+      title: 'Navkar Engineers',
+      badge: 'Industrial Web Portal',
+      summary: 'Built a modern digital presence for Navkar Engineers with product visibility, lead capture, and inquiry-friendly navigation.',
+      description: 'A polished business website for Navkar Engineers showcasing industrial equipment offerings and making it easier for customers to discover products and request quotations.',
+      image: 'navkar_engineers.png',
+      tech: ['Angular', 'TypeScript', 'Tailwind CSS', 'Netlify'],
+      details: [
+        'Designed a responsive experience tailored for industrial product discovery and customer engagement.',
+        'Structured content sections for product highlights, company overview, and inquiry-friendly contact flows.',
+        'Optimized the site for fast page loads and a professional brand presentation.'
+      ],
+      tags: ['angular', 'fullstack'],
+      demoUrl: 'https://navkar-engineers.netlify.app/',
+      githubUrl: '#',
+      businessImpact: 'Improved online visibility for industrial offerings and simplified customer inquiry handling.',
+      workflowSteps: [
+        'Visitor lands on the homepage and browses featured offerings',
+        'User explores product-focused sections and business details',
+        'Inquiry/contact actions guide visitors toward quote requests',
+        'Lead capture supports faster sales follow-up'
+      ]
+    },
+    {
+      title: 'RK Granito',
+      badge: 'Corporate Website',
+      summary: 'Created a modern corporate website for RK Granito to highlight its business identity and attract client inquiries.',
+      description: 'A clean, modern website for RK Granito with strong visual storytelling, structured product and company information, and clear contact paths for prospective clients.',
+      image: 'rk_granito.png',
+      tech: ['Angular', 'TypeScript', 'Tailwind CSS', 'Netlify'],
+      details: [
+        'Crafted a professional UI aligned with the brand and industry positioning.',
+        'Organized business content into accessible sections for better navigation and engagement.',
+        'Included clear calls to action to support client inquiry and lead generation.'
+      ],
+      tags: ['angular', 'fullstack'],
+      demoUrl: 'https://www.rkgranito.com/',
+      githubUrl: '#',
+      businessImpact: 'Strengthened digital presence and made the brand more accessible for B2B opportunities.',
+      workflowSteps: [
+        'Visitor views the homepage and brand overview',
+        'User navigates through product and business content sections',
+        'Contact and inquiry actions are surfaced clearly',
+        'Potential clients can connect quickly with the business'
+      ]
     }
   ];
 
