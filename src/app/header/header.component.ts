@@ -11,7 +11,7 @@ import { FirebaseService } from '../services/firebase.service';
 })
 export class HeaderComponent implements OnInit {
   isMenuOpen = false;
-  themeMode: 'light' | 'dark' | 'system' = 'system';
+  themeMode: 'light' | 'dark' | 'system' = 'light';
   isThemeDropdownOpen = false;
   
   // ScrollSpy active section
@@ -139,11 +139,13 @@ export class HeaderComponent implements OnInit {
     if (!isPlatformBrowser(this.platformId)) return;
     
     try {
-      const saved = localStorage.getItem('theme') as 'light' | 'dark' | 'system';
-      this.themeMode = saved || 'system';
-      document.documentElement.setAttribute('data-theme', this.themeMode);
+      const saved = localStorage.getItem('theme') as 'light' | 'dark' | 'system' | null;
+      const resolvedTheme = saved === 'dark' ? 'dark' : 'light';
+      this.themeMode = resolvedTheme;
+      document.documentElement.setAttribute('data-theme', resolvedTheme);
     } catch (e) {
-      this.themeMode = 'system';
+      this.themeMode = 'light';
+      document.documentElement.setAttribute('data-theme', 'light');
     }
   }
 

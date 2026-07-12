@@ -16,8 +16,9 @@
   <script>
     (function() {
       try {
-        const saved = localStorage.getItem('theme') || 'system';
-        document.documentElement.setAttribute('data-theme', saved);
+        const saved = localStorage.getItem('theme');
+        const theme = saved === 'dark' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', theme);
       } catch (e) {}
     })();
   </script>
