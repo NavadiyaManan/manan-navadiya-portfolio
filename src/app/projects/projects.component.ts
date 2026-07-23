@@ -4,6 +4,7 @@ import { FirebaseService } from '../services/firebase.service';
 
 export interface Project {
   title: string;
+  company?: string;
   badge: string;
   summary: string;
   description: string;
@@ -31,7 +32,35 @@ export class ProjectsComponent {
 
   projects: Project[] = [
     {
+      title: 'Unnati – Loyalty & Rewards Platform (Astral Paints)',
+      company: 'Astral Ltd',
+      badge: 'Loyalty & Rewards',
+      summary: 'Designed and developed secure RESTful APIs for the Unnati mobile application used by Astral Paint dealers and partners.',
+      description: 'A comprehensive loyalty and rewards platform for Astral Ltd. (Astral Paints). Developed secure RESTful backend APIs powering point management, campaign tracking, user authentication, and Pine Labs API redemptions for dealers and partners.',
+      image: 'unnati_astral.png',
+      tech: ['.NET Core Web API', 'C#', 'SQL Server', 'REST API', 'Pine Labs API'],
+      details: [
+        'Designed and developed secure RESTful APIs for the Unnati mobile application used by Astral Paint dealers and partners.',
+        'Developed APIs for reward point management, redemption history, user authentication, and campaign management.',
+        'Implemented secure API communication, request validation, exception handling, and comprehensive logging.',
+        'Optimized SQL queries and stored procedures to improve API performance and reduce response time.',
+        'Collaborated with Android and frontend teams to ensure seamless integration of backend services.'
+      ],
+      tags: ['dotnet', 'fullstack', 'sql'],
+      demoUrl: '#',
+      githubUrl: '#',
+      businessImpact: 'Powered high-concurrency reward transactions, point tracking, and seamless redemption workflows for Astral Paint dealers.',
+      workflowSteps: [
+        'User authentication and partner security validation',
+        'Reward points accumulation & campaign qualification engine',
+        'Pine Labs API integration for point redemptions',
+        'Optimized SQL stored procedure execution for fast response times',
+        'Comprehensive audit logging and mobile API payload delivery'
+      ]
+    },
+    {
       title: 'Business Intelligence Platform (PathQuest BI)',
+      company: 'PathQuest',
       badge: 'Enterprise Platform',
       summary: 'Enhanced an enterprise BI platform delivering real-time financial and accounting insights with multi-tenant isolation.',
       description: 'A multi-tenant business intelligence portal serving large-scale accounting firms. Built to render complex financial reports, budgeting analyses, and variance comparisons across various custom fiscal calendars.',
@@ -56,6 +85,7 @@ export class ProjectsComponent {
     },
     {
       title: 'Accounts Payable Automation Engine',
+      company: 'PathQuest',
       badge: 'Workflow Automation',
       summary: 'Architected backend worker pipelines automating invoice workflows and syncing ERP accounting platforms.',
       description: 'An automated billing and invoice approval pipeline. Integrates directly with third-party cloud accounting packages, running rule-based worker engines to route bills through organizational validation workflows.',
@@ -80,6 +110,7 @@ export class ProjectsComponent {
     },
     {
       title: 'Income Tax Returns (ITR) Portal',
+      company: 'Technomark Solutions',
       badge: 'Client Web Portal',
       summary: 'Developed a localized tax application with complex questionnaire flows for a Japanese market.',
       description: 'A customer-facing web portal allowing Japanese clients to submit and calculate complex tax returns. Features highly localized questionnaires and step-by-step submission tracking.',
@@ -104,6 +135,7 @@ export class ProjectsComponent {
     },
     {
       title: 'QuickBooks Online Tax Sync Integration',
+      company: 'Technomark Solutions',
       badge: 'ERP Integration',
       summary: 'Designed OAuth 2.0 sync integrations and Excel ingestion tools for QuickBooks Online.',
       description: 'A custom ERP integration connecting corporate accounting files to QuickBooks Online. Features OAuth authentication, bulk account configuration tools, and advanced data verification spreadsheet ingestion.',
@@ -128,6 +160,7 @@ export class ProjectsComponent {
     },
     {
       title: 'Productivity Management Dashboard',
+      company: 'Technomark Solutions',
       badge: 'SaaS Tool',
       summary: 'Developed a tracking portal for tasks, client inquiries, and role-based performance metrics.',
       description: 'An internal team coordination tool built to monitor developer task timelines, track incoming client technical queries, and aggregate performance metrics in real-time dashboards.',

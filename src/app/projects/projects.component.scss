@@ -80,3 +80,14 @@
     max-height: 92vh;
   }
 }
+
+@media (max-width: 640px) {
+  .company-badge {
+    font-size: 0.65rem;
+  }
+
+  .project-badge {
+    font-size: 0.6rem;
+    letter-spacing: 0.03em;
+  }
+}
